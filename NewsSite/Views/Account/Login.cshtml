@@ -1,0 +1,30 @@
+﻿@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+<h1>Login</h1>
+<hr />
+<form method="post" asp-controller="account" asp-action="login">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="EmailOrName"></label>
+        <input type="text" class="form-control" asp-for="EmailOrName">
+        <span asp-validation-for="EmailOrName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input type="password" class="form-control" asp-for="Password">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label asp-for="RememberMe">
+                <input asp-for="RememberMe" />
+                Remember me
+            </label>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+</form>

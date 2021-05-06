@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = ViewBag.ErrorCode + " error";
+}
+<h1>@ViewBag.ErrorCode error</h1>
+<hr />
+<div class="alert alert-danger" role="alert">
+    <p>Something went wrong. Please try again later or make contact with us.</p>
+</div>
+<a class="btn btn-default" role="button" asp-controller="home" asp-action="index">Return to home</a>
+

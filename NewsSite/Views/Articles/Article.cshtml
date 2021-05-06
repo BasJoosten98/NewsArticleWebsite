@@ -1,0 +1,12 @@
+﻿@{
+    @model ArticlesIndexViewModel;
+}
+
+<h1>
+    Specific article
+</h1>
+<hr />
+<h2>@Model.Article.Title</h2>
+@*<p>Written by @Model.AuthorName</p>*@
+@await Component.InvokeAsync("AuthorLabel", new { authorName = Model.AuthorName })
+<p>@Model.Article.Content</p>

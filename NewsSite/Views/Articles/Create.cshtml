@@ -1,0 +1,25 @@
+﻿@{ 
+    @model ArticlesIndexViewModel
+    ViewBag.Title = "Create article";
+}
+<h1>Create article</h1>
+<hr />
+<form method="post" asp-controller="Articles" asp-action="create">
+    <input type="hidden" asp-for="Article.UserId" />
+    <div class="form-group">
+        <label asp-for="Article.Title">Title</label>
+        <input type="text" class="form-control" asp-for="Article.Title" placeholder="Article title">
+        <span asp-validation-for="Article.Title" class="text-danger"></span>
+    </div>
+    @*<div class="form-group">
+        <label asp-for="Author">Author</label>
+        <input type="text" class="form-control" asp-for="Author" placeholder="Author name">
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>*@
+    <div class="form-group">
+        <label asp-for="Article.Content">Content</label>
+        <textarea class="form-control" rows="3" asp-for="Article.Content" placeholder="Article content"></textarea>
+        <span asp-validation-for="Article.Content" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-default">Submit article</button>
+</form>
